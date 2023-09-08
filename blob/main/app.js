@@ -24,20 +24,22 @@ app.get('/', (req, res) => {
 app.use('/customer', customerRoute);
 app.use('/product', productRoute);
 
-app
-  .route('/customer')
-  .get(function (req, res) {
-    res.send('search info');
-  })
-  .post(function (req, res) {
-    res.send('add');
-  })
-  .put(function (req, res) {
-    res.send('modify');
-  })
-  .delete(function (req, res) {
-    res.send('delete');
-  });
+app.use(express.static('public')); // 정적 파일 가져올 수있다는데,, 왜 안되냐구ㅠ
+
+// app
+//   .route('/customer')
+//   .get(function (req, res) {
+//     res.send('search info');
+//   })
+//   .post(function (req, res) {
+//     res.send('add');
+//   })
+//   .put(function (req, res) {
+//     res.send('modify');
+//   })
+//   .delete(function (req, res) {
+//     res.send('delete');
+//   });
 
 // app.get('/customer', function (req, res) {
 //   res.send('get 요청에 대한 응답');

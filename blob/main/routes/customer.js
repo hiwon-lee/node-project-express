@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', function (req, res) {
-  res.send('customer 라우트 루트');
+router.post('/', function (req, res) {
+  // res.send('customer 라우트 루트');
+  console.log(req.body.param);
+  res.send(req.body.param);
+
+  // 실행방법
+  // 1. node app.js
+  // 2. postman에서 post로 json파일을 생성하고 3000호출
 });
 
 router.post('/insert', function (req, res) {
